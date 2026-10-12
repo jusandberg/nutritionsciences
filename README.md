@@ -1,39 +1,26 @@
-# Nutrition Study Studio
+# Juliana Nutrition Study Hub
 
-A static study site containing Units 1–3, lessons, flashcards, quiz explanations and a calorie calculator. The dashboard has placeholders for 14 units. No installation or build step is required.
+A static, browser-based study hub covering 14 nutrition units. It includes 161 lessons, 336 flashcards, calculators, progress tracking, and 420 practice questions with a one-sentence explanation of why the correct answer is right.
 
-## Publish on GitHub Pages
+## Project structure
 
-1. Extract this ZIP on your computer.
-2. Create a GitHub repository, for example `nutrition-study`.
-3. Upload ALL extracted files to the repository root. `index.html` must be at the top level, not inside an extra folder. Upload the extracted files, not the ZIP itself.
-4. In the repository, open Settings → Pages.
-5. Under Build and deployment, choose Deploy from a branch.
-6. Select the main branch and / (root), then Save.
-7. Once deployment completes, GitHub displays the website URL in Settings → Pages.
+- `dist/` — the complete website (HTML, CSS, JavaScript, unit data, and images)
+- `.openai/hosting.json` — hosting configuration for the existing ChatGPT Site
 
-GitHub Pages sites are generally publicly accessible. A private repository does not automatically make its Pages website private. Check the publication visibility available for your GitHub plan before publishing.
+No build step or package installation is required. The site stores study progress locally in the browser.
 
-## Open locally
+## Update this project on GitHub
 
-Extract all files together and open index.html in a browser. For predictable browser storage behaviour, use GitHub Pages or a local web server rather than relying on file:// storage.
+Upload or commit the contents of this folder to the GitHub repository. If the repository already contains an older copy, replace its `dist/` folder with this one and keep `.openai/hosting.json` if the same ChatGPT Site should remain connected.
 
-## Progress
+From a terminal opened in this folder, a typical update is:
 
-Progress saves in the browser with localStorage. It is not synced between devices. Existing progress on the ChatGPT-hosted site will not automatically transfer to a different origin such as GitHub Pages. No personal progress or credentials are included in this export.
+```text
+git add README.md dist .openai/hosting.json
+git commit -m "Complete all 14 nutrition study units"
+git push
+```
 
-## Files
+## Preview locally
 
-- index.html: layout and styling
-- app.js: lessons, practice, cards and calculator
-- course.js: unit selection and per-unit progress
-- data.js: Unit 1 content
-- unit2.js and unit3.js: later-unit content
-- PNG files: source figures used in lessons and questions
-- .nojekyll: serves these files as a plain static website
-
-## Content
-
-Independent teaching overviews informed by the supplied course quizzes, our conversation and linked references. These are not official textbook reproductions or official answer keys. Ambiguous quiz items are marked and excluded from scoring.
-
-To expand the course, add a unit data file, load it in index.html, register it in course.js and add its selector option. Keep all file paths relative so the site works at a GitHub Pages repository subpath.
+Serve `dist/` with any static web server, then open its local URL in a browser. Opening `dist/index.html` directly may also work, but a local server is more reliable.
