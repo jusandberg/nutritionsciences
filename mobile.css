@@ -1,3 +1,17 @@
+.welcome-note {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin: 22px 0 28px;
+  border-left: 5px solid var(--green);
+}
+.welcome-note h3 { margin: 6px 0 8px; }
+.welcome-note p { margin: 0; max-width: 760px; }
+.welcome-note button { flex: 0 0 auto; min-height: 44px; }
+#all-units { scroll-margin-top: 110px; margin-top: 40px; }
+#all-units h2 { margin: 8px 0 18px; }
+
 @media (max-width: 800px) {
   html { scroll-padding-top: 92px; }
   body { overflow-x: hidden; font-size: 16px; }
@@ -17,6 +31,9 @@
   .grid { margin-top: 20px; gap: 12px; }
   .card { padding: 18px; border-radius: 14px; }
   .courseintro { margin-bottom: 14px; }
+  .welcome-note { display: block; margin: 18px 0 24px; }
+  .welcome-note button { width: 100%; margin-top: 16px; }
+  #all-units { margin-top: 32px; }
   .unitgrid { grid-template-columns: 1fr; gap: 10px; margin: 14px 0 24px; }
   .unitcard { padding: 15px; }
   .unitcard button { width: 100%; min-height: 44px; }
